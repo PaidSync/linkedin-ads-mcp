@@ -1,24 +1,23 @@
 # LinkedIn Ads MCP
 
-A Model Context Protocol (MCP) server that lets AI assistants (Claude, ChatGPT, Gemini, Cursor, Perplexity, or any MCP client) run LinkedIn Ads end to end. 25 typed tools with full write access, verified LinkedIn Marketing Partner, approval-gated writes, and 12 more ad and measurement platforms in the same session.
+A Model Context Protocol (MCP) server that lets AI assistants (Claude, ChatGPT, Gemini, Cursor, Perplexity, or any MCP client) run LinkedIn Ads end to end. 25 typed tools with full write access, approval-gated writes, and 13 more ad and measurement platforms in the same session.
 
 **Hosted at [paidsync.ai](https://paidsync.ai). Free plan: 15 tasks a month, no card required.**
 
 [![MCP](https://img.shields.io/badge/MCP-server-black?logo=anthropic&logoColor=white)](https://modelcontextprotocol.io)
 [![Hosted](https://img.shields.io/badge/hosted-paidsync.ai-0077B6)](https://paidsync.ai/linkedin-ads-mcp)
 [![Free plan](https://img.shields.io/badge/free%20plan-15%20tasks%2Fmo-7CB518)](https://paidsync.ai/signup?plan=free)
-[![LinkedIn Marketing Partner](https://img.shields.io/badge/LinkedIn-Marketing%20Partner-0A66C2?logo=linkedin)](https://paidsync.ai/linkedin-ads-mcp)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## What this is
 
 PaidSync's LinkedIn Ads MCP surface, exposed to any AI assistant that speaks the Model Context Protocol. The full product page lives at [paidsync.ai/linkedin-ads-mcp](https://paidsync.ai/linkedin-ads-mcp). This repository is the developer entry point.
 
-Three properties that set this LinkedIn Ads MCP apart from every current option:
+Three properties of this LinkedIn Ads MCP surface:
 
 1. **25 LinkedIn tools with full write access.** Campaign group and campaign lifecycle, ad and creative management including `list_linkedin_creatives_with_media`, targeting patches on live campaigns (job function, seniority, industry, company size, member skills), conversion tracking creation, and performance breakdowns by campaign, creative, geography, job function, company size, and member age range.
-2. **Verified LinkedIn Marketing Partner.** Adzviser is read-only. Adkit added LinkedIn write access in July 2026 but without approval gates. PaidSync is the only LinkedIn Ads MCP that combines write access, approval gates, and verified Marketing Partner status.
-3. **12 more platforms in the same session.** Google Ads (136 tools), Meta Ads (69), TikTok (13), GA4 (28), GTM (37), Search Console (6), Merchant Center (15), plus Microsoft, Snapchat, Reddit, Pinterest, and ChatGPT Ads. For B2B teams running LinkedIn alongside Google Ads and GA4, cross-platform attribution lands in one conversation.
+2. **Every write is approval-gated.** Nothing reaches a live LinkedIn account until you approve the exact proposal in chat. Destructive writes need a second confirmation, most mutations have a dry-run preview, and sessions are revocable.
+3. **13 more platforms in the same session.** Google Ads (133 tools), Meta Ads (82), GTM (39), ChatGPT Ads (28), GA4 (26), Merchant Center (16), Microsoft Ads (15), Snapchat Ads (15), Pinterest Ads (14), Reddit Ads (14), X Ads (14), TikTok Ads (13), Search Console (6). 460+ tools across 14 platforms in total. For B2B teams running LinkedIn alongside Google Ads and GA4, cross-platform attribution lands in one conversation.
 
 ## Getting started (hosted, recommended)
 
@@ -52,6 +51,20 @@ paidsync_context({ include_tools: ['linkedin_ads'] })
 paidsync_exec({ tool: 'get_linkedin_performance', args: { date_range: 'last_30_days' } })
 ```
 
+## Examples
+
+Runnable configs and copy-paste prompts live in [`examples/`](./examples).
+
+| File | What it is |
+|---|---|
+| [`examples/claude_desktop_config.json`](./examples/claude_desktop_config.json) | Claude Desktop config block |
+| [`examples/claude_code.md`](./examples/claude_code.md) | The `claude mcp add` command and how to verify it connected |
+| [`examples/cursor_mcp.json`](./examples/cursor_mcp.json) | Cursor `.cursor/mcp.json` |
+| [`examples/windsurf_mcp_config.json`](./examples/windsurf_mcp_config.json) | Windsurf `mcp_config.json` |
+| [`examples/prompts.md`](./examples/prompts.md) | 15 LinkedIn Ads prompts mapped to the tools below |
+
+Installing this as an AI agent, read [llms-install.md](./llms-install.md). Filing a bug or a tool request, read [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Tools by category
 
 | Category | Named tools |
@@ -70,9 +83,9 @@ Full live catalog at `paidsync_context({ include_tools: ['linkedin_ads'] })`.
 
 | Plan | Price | Tasks | Notes |
 |---|---|---|---|
-| Free | $0/mo | 15 | No card required, all 13 platforms |
-| Pro | From $99/mo | 600 to 4,000 | Solo operators and small teams |
-| Team | From $249/mo | 6,000 shared | 5 seats included |
+| Free | $0/mo | 15 | No card required, all 14 platforms |
+| Pro | From $99/mo | 600 to 4,000 | 1 seat, solo operators and small teams |
+| Team | From $249/mo | 6,000 shared | Entry tier is 5 seats, scales to 60,000 tasks at 50 seats |
 | Done For You | Custom | Managed | PaidSync runs the accounts |
 
 ## Safety model
@@ -83,19 +96,18 @@ Full live catalog at `paidsync_context({ include_tools: ['linkedin_ads'] })`.
 - Revocable sessions.
 - Rate-limit aware. LinkedIn's Marketing API is tighter than Google or Meta for some account classes; PaidSync's polling loops build in back-off.
 
-## Compared with other LinkedIn Ads MCP options
+## What this surface gives you
 
-| | PaidSync | Adkit | Adzviser |
-|---|---|---|---|
-| LinkedIn tools | 25 native | Subset of 23 total | Reporting connector |
-| Write access | Full, gated | Yes, ungated | Read-only |
-| Approval gates on writes | Yes | No, applies immediately | Not applicable |
-| Platform scope in same session | 13 platforms | Google, Meta, LinkedIn | 45+ sources, reporting only |
-| LinkedIn Marketing Partner | Yes, company-verified | Not listed | Not listed |
-| Conversion tracking creation | Yes, `create_linkedin_conversion` | Not listed | No |
-| Price | Free $0 (15 tasks), Pro from $99/mo | $29 to $49/year | $48.99 to $148.99/month |
+| | PaidSync LinkedIn Ads MCP |
+|---|---|
+| LinkedIn tools | 25 native |
+| Write access | Full, approval-gated |
+| Approval gates on writes | Yes, on every write |
+| Platform scope in same session | 14 platforms |
+| Conversion tracking creation | Yes, `create_linkedin_conversion` |
+| Price | Free $0 (15 tasks), Pro from $99/mo |
 
-Full comparison at [paidsync.ai/linkedin-ads-mcp](https://paidsync.ai/linkedin-ads-mcp).
+Vendor by vendor comparisons go stale as products ship, so they are kept dated and sourced on the product page rather than here. See [paidsync.ai/linkedin-ads-mcp](https://paidsync.ai/linkedin-ads-mcp).
 
 ## License
 

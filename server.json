@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "ai.paidsync/linkedin-ads-mcp",
+  "description": "Run LinkedIn Ads from any AI assistant. 25 LinkedIn tools, full write access, approval gated.",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.paidsync.ai/mcp"
+    }
+  ]
+}
