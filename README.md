@@ -1,12 +1,12 @@
 # LinkedIn Ads MCP
 
-A Model Context Protocol (MCP) server that lets AI assistants (Claude, ChatGPT, Gemini, Cursor, Perplexity, or any MCP client) run LinkedIn Ads end to end. 25 typed tools with full write access, approval-gated writes, and 13 more ad and measurement platforms in the same session.
+A Model Context Protocol (MCP) server that lets AI assistants (Claude, ChatGPT, Gemini, Cursor, Perplexity, or any MCP client) run LinkedIn Ads end to end. 34 typed tools with full write access, approval-gated writes, and 13 more ad and measurement platforms in the same session.
 
-**Hosted at [paidsync.ai](https://paidsync.ai). Free plan: 15 tasks a month, no card required.**
+**Hosted at [paidsync.ai](https://paidsync.ai). Free plan: 100 tasks a month, no card required.**
 
 [![MCP](https://img.shields.io/badge/MCP-server-black?logo=anthropic&logoColor=white)](https://modelcontextprotocol.io)
 [![Hosted](https://img.shields.io/badge/hosted-paidsync.ai-0077B6)](https://paidsync.ai/linkedin-ads-mcp)
-[![Free plan](https://img.shields.io/badge/free%20plan-15%20tasks%2Fmo-7CB518)](https://paidsync.ai/signup?plan=free)
+[![Free plan](https://img.shields.io/badge/free%20plan-100%20tasks%2Fmo-7CB518)](https://paidsync.ai/signup?plan=free)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## What this is
@@ -15,9 +15,9 @@ PaidSync's LinkedIn Ads MCP surface, exposed to any AI assistant that speaks the
 
 Three properties of this LinkedIn Ads MCP surface:
 
-1. **25 LinkedIn tools with full write access.** Campaign group and campaign lifecycle, ad and creative management including `list_linkedin_creatives_with_media`, targeting patches on live campaigns (job function, seniority, industry, company size, member skills), conversion tracking creation, and performance breakdowns by campaign, creative, geography, job function, company size, and member age range.
+1. **34 LinkedIn tools with full write access.** Campaign group and campaign lifecycle, ad and creative management including `list_linkedin_creatives_with_media`, targeting patches on live campaigns (job function, seniority, industry, company size, member skills), conversion tracking creation, and performance breakdowns by campaign, creative, geography, job function, company size, and member age range.
 2. **Every write is approval-gated.** Nothing reaches a live LinkedIn account until you approve the exact proposal in chat. Destructive writes need a second confirmation, most mutations have a dry-run preview, and sessions are revocable.
-3. **13 more platforms in the same session.** Google Ads (133 tools), Meta Ads (82), GTM (39), ChatGPT Ads (28), GA4 (26), Merchant Center (16), Microsoft Ads (15), Snapchat Ads (15), Pinterest Ads (14), Reddit Ads (14), X Ads (14), TikTok Ads (13), Search Console (6). 460+ tools across 14 platforms in total. For B2B teams running LinkedIn alongside Google Ads and GA4, cross-platform attribution lands in one conversation.
+3. **13 more platforms in the same session.** Google Ads (158 tools), Microsoft Ads (156), Meta Ads (92), GTM (39), ChatGPT Ads (28), GA4 (26), TikTok Ads (24), Merchant Center (16), Snapchat Ads (15), Pinterest Ads (14), Reddit Ads (14), X Ads (14), Search Console (6). 630+ tools across 14 platforms in total. For B2B teams running LinkedIn alongside Google Ads and GA4, cross-platform attribution lands in one conversation.
 
 ## Getting started (hosted, recommended)
 
@@ -83,9 +83,9 @@ Full live catalog at `paidsync_context({ include_tools: ['linkedin_ads'] })`.
 
 | Plan | Price | Tasks | Notes |
 |---|---|---|---|
-| Free | $0/mo | 15 | No card required, all 14 platforms |
-| Pro | From $99/mo | 600 to 4,000 | 1 seat, solo operators and small teams |
-| Team | From $249/mo | 6,000 shared | Entry tier is 5 seats, scales to 60,000 tasks at 50 seats |
+| Free | $0/mo | 100 | No card required, all 14 platforms |
+| Pro | From $99/mo | 1,000 to 6,000 | 1 seat, solo operators and small teams |
+| Team | From $249/mo | 10,000 shared | Entry tier is up to 20 seats, larger tiers on paidsync.ai/pricing |
 | Done For You | Custom | Managed | PaidSync runs the accounts |
 
 ## Safety model
@@ -100,12 +100,12 @@ Full live catalog at `paidsync_context({ include_tools: ['linkedin_ads'] })`.
 
 | | PaidSync LinkedIn Ads MCP |
 |---|---|
-| LinkedIn tools | 25 native |
+| LinkedIn tools | 34 native |
 | Write access | Full, approval-gated |
 | Approval gates on writes | Yes, on every write |
 | Platform scope in same session | 14 platforms |
 | Conversion tracking creation | Yes, `create_linkedin_conversion` |
-| Price | Free $0 (15 tasks), Pro from $99/mo |
+| Price | Free $0 (100 tasks), Pro from $99/mo |
 
 Vendor by vendor comparisons go stale as products ship, so they are kept dated and sourced on the product page rather than here. See [paidsync.ai/linkedin-ads-mcp](https://paidsync.ai/linkedin-ads-mcp).
 
