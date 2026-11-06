@@ -27,13 +27,13 @@ Three properties of this LinkedIn Ads MCP surface:
 {
   "mcpServers": {
     "paidsync": {
-      "url": "https://mcp.paidsync.ai/mcp?key=YOUR_API_KEY"
+      "url": "https://mcp.paidsync.ai/mcp"
     }
   }
 }
 ```
 
-Get your API key at [paidsync.ai/signup](https://paidsync.ai/signup?plan=free).
+No API key is needed: sign in when your client asks. Start free at [paidsync.ai/signup](https://paidsync.ai/signup?plan=free).
 
 ### claude.ai (web), ChatGPT, Gemini, Cursor, Windsurf, Perplexity
 
